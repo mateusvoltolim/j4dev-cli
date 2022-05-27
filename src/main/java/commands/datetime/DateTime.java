@@ -16,13 +16,13 @@ import java.time.format.DateTimeFormatter;
  * @author Mateus N V Satelis
  * @since 15/05/2022
  */
-@Command(name = "dt", aliases = {"datetime"}, description = "Date/Time functions")
+@Command(name = "dt", aliases = {"datetime"}, description = "Date/Time functions", mixinStandardHelpOptions = true)
 public class DateTime implements BasicCommand {
 
     @Option(names = {"-z", "--zone"}, description = "It specifies which zone id should be used", defaultValue = "")
     String zone;
 
-    @Command(name = "-from-epoch", description = "Convert to human readable date/time")
+    @Command(name = "-from-epoch", description = "Convert to human readable date/time", mixinStandardHelpOptions = true)
     Integer fromEpoch(
             @Option(names = {"-ms", "--milliseconds"}, description = "If epoch is milliseconds", defaultValue = "false") Boolean ms,
             @Parameters(index = "0", description = "Epoch", arity = "1") Long epoch
@@ -33,7 +33,7 @@ public class DateTime implements BasicCommand {
         return Constants.SUCCESS;
     }
 
-    @Command(name = "-from-dt", description = "Convert to epoch timestamp")
+    @Command(name = "-from-dt", description = "Convert to epoch timestamp", mixinStandardHelpOptions = true)
     Integer fromDateTime(
             @Option(names = {"-ms", "--milliseconds"}, description = "If epoch output should be in milliseconds", defaultValue = "false") Boolean ms,
             @Option(names = {"-f", "--format"}, description = "Date/Time Format", defaultValue = "") String format,

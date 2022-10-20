@@ -24,7 +24,7 @@ public class Uuid implements BasicCommand {
             quantity = 1;
         }
 
-        IntStream.rangeClosed(0, quantity).forEach($ -> System.out.println(UUID.randomUUID()));
+        IntStream.range(0, quantity).forEach($ -> System.out.println(UUID.randomUUID()));
         return Constants.SUCCESS;
     }
 }

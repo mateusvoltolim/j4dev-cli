@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2] - 2022-10-20
+Fix -n option usage
+
+### Changed
+
+- -n=`<quantity>` option to UUID command
+
 ## [1.0.1] - 2022-05-27
 Add -n option to generated as many UUID as needed
 
